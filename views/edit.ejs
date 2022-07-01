@@ -1,0 +1,15 @@
+<%- include("partials/header") -%>
+    <h1>Edit Post</h1>
+
+    <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+        <div class="form-floating">
+            <label for="title">Title</label>
+            <input style="height: 30px" class="form-control" name="title" value="<%= post.title %> " id="title">
+
+            <label for="post">Post</label>
+            <textarea style="height: 100px" class="form-control" name="content" value="<%= post.content %>" id="post"></textarea>
+        </div>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/posts/<%= post._id %> " id="button">Cancel</a>
+    <%- include("partials/footer") -%>
