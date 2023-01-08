@@ -11,7 +11,7 @@ const aboutContent = `It's just a simple diary to write what you want and talk w
 const contactContent = `We are here to represent your soul and you space the best contact you can do is to talk with yourself, and I'm sure that you will find that you missed it so much and it missed you as much as you do.`;
 
 const app = express();
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+// const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
