@@ -6,19 +6,18 @@ const path = require("path");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 
-const homeStartingContent =
-  "I believe in YOU; the one turning the pages will see the real ME, and will accept the raw form of mine rather than the plastic and sugary coated form. So now you crossed the line into my so called mental asylum… WELCOME… You are the CHOSEN ONE; tell everybody… About the content… Promise to Me : when in my old days I turn these pages I will see the real Me. I'll Imagine… will Improvise…will Imitate…will Incorporate… will Improve… You and Me is all I have to believe…";
-const aboutContent =
-  "It's just a simple diary to write what you want and talk with yourself peacefully.";
-const contactContent =
-  "We are here to represent your soul and you space the best contact you can do is to talk with yourself, and I'm sure that you will find that you missed it so much and it missed you as much as you do.";
+const homeStartingContent = `I believe in YOU; the one turning the pages will see the real ME, and will accept the raw form of mine rather than the plastic and sugary coated form. So now you crossed the line into my so called mental asylum… WELCOME… You are the CHOSEN ONE; tell everybody… About the content… Promise to Me : when in my old days I turn these pages I will see the real Me. I'll Imagine… will Improvise…will Imitate…will Incorporate… will Improve… You and Me is all I have to believe…`;
+const aboutContent = `It's just a simple diary to write what you want and talk with yourself peacefully.`;
+const contactContent = `We are here to represent your soul and you space the best contact you can do is to talk with yourself, and I'm sure that you will find that you missed it so much and it missed you as much as you do.`;
+
 const app = express();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
 app.use(methodOverride("_method"));
 
 const postSchema = new mongoose.Schema({
